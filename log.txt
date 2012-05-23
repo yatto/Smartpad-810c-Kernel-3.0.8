@@ -1,0 +1,452 @@
+diff -r ./drivers/usb/gadget//android.c /home/max/Scrivania/ANDROIDR3/drivers/usb/gadget//android.c
+33d32
+< #include <linux/oem_board.h>
+67,69d65
+< //#define GADGET_USB_YF_ID "M805HC0123456789" 
+< #define GADGET_USB_YF_ID  YFID
+< 
+71c67
+< #define VENDOR_ID		0x2207//0x18D1
+---
+> #define VENDOR_ID		0x2207//0x18D1 
+545c541
+< 	config->fsg.nluns = 2;
+---
+> 	config->fsg.nluns = 1;
+547d542
+< 	config->fsg.luns[1].removable = 1;
+557,561c552
+< 				"lun0");
+< 
+< 	err = sysfs_create_link(&f->dev->kobj,
+< 				&common->luns[1].dev.kobj,
+< 				"lun1");
+---
+> 				"lun");
+1022,1023c1013
+< 	//strncpy(serial_string, "0123456789ABCDEF", sizeof(serial_string) - 1);
+< 	strncpy(serial_string, GADGET_USB_YF_ID, sizeof(serial_string) - 1);
+---
+> 	strncpy(serial_string, "0123456789ABCDEF", sizeof(serial_string) - 1);
+Solo in /home/max/Scrivania/ANDROIDR3/drivers/usb/gadget/: android.c~
+I file binari ./drivers/usb/gadget//android.o e /home/max/Scrivania/ANDROIDR3/drivers/usb/gadget//android.o sono diversi
+diff -r ./drivers/usb/gadget//.android.o.cmd /home/max/Scrivania/ANDROIDR3/drivers/usb/gadget//.android.o.cmd
+1c1
+< cmd_drivers/usb/gadget/android.o := ../arm-2010.09/bin/arm-none-linux-gnueabi-gcc -Wp,-MD,drivers/usb/gadget/.android.o.d  -nostdinc -isystem /home/max/Scrivania/arm-2010.09/bin/../lib/gcc/arm-none-linux-gnueabi/4.5.1/include -I/home/max/Scrivania/Kepler2/arch/arm/include -Iarch/arm/include/generated -Iinclude  -include include/generated/autoconf.h -D__KERNEL__ -mlittle-endian -Iarch/arm/mach-rk29/include -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -Os -marm -fno-dwarf2-cfi-asm -mabi=aapcs-linux -mno-thumb-interwork -funwind-tables -D__LINUX_ARM_ARCH__=7 -mtune=cortex-a8 -mfpu=neon -ftree-vectorize -mfloat-abi=softfp -O2 -march=armv7-a -msoft-float -Uarm -Wframe-larger-than=1024 -fno-stack-protector -fomit-frame-pointer -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(android)"  -D"KBUILD_MODNAME=KBUILD_STR(g_android)" -c -o drivers/usb/gadget/android.o drivers/usb/gadget/android.c
+---
+> cmd_drivers/usb/gadget/android.o := ../arm-2010.09/bin/arm-none-linux-gnueabi-gcc -Wp,-MD,drivers/usb/gadget/.android.o.d  -nostdinc -isystem /home/max/Scrivania/arm-2010.09/bin/../lib/gcc/arm-none-linux-gnueabi/4.5.1/include -I/home/max/Scrivania/ANDROIDR3/arch/arm/include -Iarch/arm/include/generated -Iinclude  -include include/generated/autoconf.h -D__KERNEL__ -mlittle-endian -Iarch/arm/mach-rk29/include -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -Os -marm -fno-dwarf2-cfi-asm -mabi=aapcs-linux -mno-thumb-interwork -funwind-tables -D__LINUX_ARM_ARCH__=7 -mtune=cortex-a8 -mfpu=neon -ftree-vectorize -mfloat-abi=softfp -O2 -march=armv7-a -msoft-float -Uarm -Wframe-larger-than=1024 -fno-stack-protector -fomit-frame-pointer -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(android)"  -D"KBUILD_MODNAME=KBUILD_STR(g_android)" -c -o drivers/usb/gadget/android.o drivers/usb/gadget/android.c
+44c44
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/types.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/types.h \
+46c46
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/bitsperlong.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/bitsperlong.h \
+50c50
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/posix_types.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/posix_types.h \
+55c55
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/stat.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/stat.h \
+69c69
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/linkage.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/linkage.h \
+71,72c71,72
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/bitops.h \
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/system.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/bitops.h \
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/system.h \
+88,89c88,89
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/irqflags.h \
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/ptrace.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/irqflags.h \
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/ptrace.h \
+92,93c92,93
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/hwcap.h \
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/outercache.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/hwcap.h \
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/outercache.h \
+105c105
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/byteorder.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/byteorder.h \
+108c108
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/swab.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/swab.h \
+117c117
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/bug.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/bug.h \
+122c122
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/cache.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/cache.h \
+136c136
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/thread_info.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/thread_info.h \
+138c138
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/fpstate.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/fpstate.h \
+141c141
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/domain.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/domain.h \
+154c154
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/processor.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/processor.h \
+158c158
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/hw_breakpoint.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/hw_breakpoint.h \
+161c161
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/atomic.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/atomic.h \
+165c165
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/div64.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/div64.h \
+193c193
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/current.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/current.h \
+203c203
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/string.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/string.h \
+208c208
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/page.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/page.h \
+216,217c216,217
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/glue.h \
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/memory.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/glue.h \
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/memory.h \
+226c226
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/sizes.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/sizes.h \
+237c237
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/errno.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/errno.h \
+264c264
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/percpu.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/percpu.h \
+268c268
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/topology.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/topology.h \
+284c284
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/param.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/param.h \
+286c286
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/timex.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/timex.h \
+306,307c306,307
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/elf.h \
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/user.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/elf.h \
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/user.h \
+319c319
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/module.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/module.h \
+338c338
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/ioctl.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/ioctl.h \
+367c367
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/fcntl.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/fcntl.h \
+371c371
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/delay.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/delay.h \
+421c421
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/auxvec.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/auxvec.h \
+425c425
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/mmu.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/mmu.h \
+427c427
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/cputime.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/cputime.h \
+431,432c431,432
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/ipcbuf.h \
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/sembuf.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/ipcbuf.h \
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/sembuf.h \
+434c434
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/signal.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/signal.h \
+436,437c436,437
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/sigcontext.h \
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/siginfo.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/sigcontext.h \
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/siginfo.h \
+447c447
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/resource.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/resource.h \
+480c480
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/device.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/device.h \
+504d503
+<   include/linux/oem_board.h \
+533c532
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/unaligned.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/unaligned.h \
+548d546
+<     $(wildcard include/config/usb/g/android.h) \
+571c569
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/pgtable.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/pgtable.h \
+574,575c572,573
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/proc-fns.h \
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/glue-proc.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/proc-fns.h \
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/glue-proc.h \
+597c595
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/pgtable-hwdef.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/pgtable-hwdef.h \
+613,614c611,612
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/uaccess.h \
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/unified.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/uaccess.h \
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/unified.h \
+619c617
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/hardirq.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/hardirq.h \
+621c619
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/irq.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/irq.h \
+624c622
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/cacheflush.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/cacheflush.h \
+628c626
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/glue-cache.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/glue-cache.h \
+632,633c630,631
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/shmparam.h \
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/cachetype.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/shmparam.h \
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/cachetype.h \
+635,636c633,634
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/kmap_types.h \
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/highmem.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/kmap_types.h \
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/highmem.h \
+646c644
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/io.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/io.h \
+649c647
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/scatterlist.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/scatterlist.h \
+658,720d655
+<   arch/arm/mach-rk29/include/mach/board.h \
+<     $(wildcard include/config/rk29/vmac.h) \
+<     $(wildcard include/config/usb20/host/en.h) \
+<     $(wildcard include/config/usb/gadget.h) \
+<   include/linux/i2c.h \
+<     $(wildcard include/config/i2c.h) \
+<     $(wildcard include/config/i2c/rk2818.h) \
+<     $(wildcard include/config/i2c/rk29.h) \
+<     $(wildcard include/config/i2c/boardinfo.h) \
+<   include/linux/of.h \
+<     $(wildcard include/config/sparc.h) \
+<     $(wildcard include/config/of.h) \
+<     $(wildcard include/config/of/dynamic.h) \
+<   arch/arm/mach-rk29/include/mach/gpio.h \
+<     $(wildcard include/config/spi/fpga/gpio.h) \
+<     $(wildcard include/config/spi/fpga/gpio/num.h) \
+<     $(wildcard include/config/ioextend/tca6424.h) \
+<     $(wildcard include/config/gpio/wm831x.h) \
+<     $(wildcard include/config/gpio/wm8994.h) \
+<     $(wildcard include/config/gpio/wm8994/num.h) \
+<   arch/arm/mach-rk29/include/mach/rk29_board.h \
+<     $(wildcard include/config/sensor/0.h) \
+<     $(wildcard include/config/sensor/iic/addr/0.h) \
+<     $(wildcard include/config/sensor/iic/adapter/id/0.h) \
+<     $(wildcard include/config/sensor/orientation/0.h) \
+<     $(wildcard include/config/sensor/power/pin/0.h) \
+<     $(wildcard include/config/sensor/reset/pin/0.h) \
+<     $(wildcard include/config/sensor/powerdn/pin/0.h) \
+<     $(wildcard include/config/sensor/falsh/pin/0.h) \
+<     $(wildcard include/config/sensor/poweractive/level/0.h) \
+<     $(wildcard include/config/sensor/resetactive/level/0.h) \
+<     $(wildcard include/config/sensor/powerdnactive/level/0.h) \
+<     $(wildcard include/config/sensor/flashactive/level/0.h) \
+<     $(wildcard include/config/sensor/qcif/fps/fixed/0.h) \
+<     $(wildcard include/config/sensor/qvga/fps/fixed/0.h) \
+<     $(wildcard include/config/sensor/cif/fps/fixed/0.h) \
+<     $(wildcard include/config/sensor/vga/fps/fixed/0.h) \
+<     $(wildcard include/config/sensor/480p/fps/fixed/0.h) \
+<     $(wildcard include/config/sensor/svga/fps/fixed/0.h) \
+<     $(wildcard include/config/sensor/720p/fps/fixed/0.h) \
+<     $(wildcard include/config/sensor/1.h) \
+<     $(wildcard include/config/sensor/iic/addr/1.h) \
+<     $(wildcard include/config/sensor/iic/adapter/id/1.h) \
+<     $(wildcard include/config/sensor/orientation/1.h) \
+<     $(wildcard include/config/sensor/power/pin/1.h) \
+<     $(wildcard include/config/sensor/reset/pin/1.h) \
+<     $(wildcard include/config/sensor/powerdn/pin/1.h) \
+<     $(wildcard include/config/sensor/falsh/pin/1.h) \
+<     $(wildcard include/config/sensor/poweractive/level/1.h) \
+<     $(wildcard include/config/sensor/resetactive/level/1.h) \
+<     $(wildcard include/config/sensor/powerdnactive/level/1.h) \
+<     $(wildcard include/config/sensor/flashactive/level/1.h) \
+<     $(wildcard include/config/sensor/qcif/fps/fixed/1.h) \
+<     $(wildcard include/config/sensor/qvga/fps/fixed/1.h) \
+<     $(wildcard include/config/sensor/cif/fps/fixed/1.h) \
+<     $(wildcard include/config/sensor/vga/fps/fixed/1.h) \
+<     $(wildcard include/config/sensor/480p/fps/fixed/1.h) \
+<     $(wildcard include/config/sensor/svga/fps/fixed/1.h) \
+<     $(wildcard include/config/sensor/720p/fps/fixed/1.h) \
+<   include/asm-generic/gpio.h \
+<     $(wildcard include/config/gpiolib.h) \
+<     $(wildcard include/config/of/gpio.h) \
+<     $(wildcard include/config/gpio/sysfs.h) \
+731c666
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/emergency-restart.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/emergency-restart.h \
+738c673
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/unistd.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/unistd.h \
+758c693
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/ftrace.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/ftrace.h \
+767c702
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/local.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/local.h \
+782,784c717,719
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/termios.h \
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/termbits.h \
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/ioctls.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/termios.h \
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/termbits.h \
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/ioctls.h \
+799c734
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/poll.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/poll.h \
+834,835c769,770
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/socket.h \
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/sockios.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/socket.h \
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/sockios.h \
+840c775
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/checksum.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/checksum.h \
+852c787
+<   /home/max/Scrivania/Kepler2/arch/arm/include/asm/dma-mapping.h \
+---
+>   /home/max/Scrivania/ANDROIDR3/arch/arm/include/asm/dma-mapping.h \
+I file binari ./drivers/usb/gadget//built-in.o e /home/max/Scrivania/ANDROIDR3/drivers/usb/gadget//built-in.o sono diversi
+diff -r ./drivers/usb/gadget//f_mass_storage.c /home/max/Scrivania/ANDROIDR3/drivers/usb/gadget//f_mass_storage.c
+299,301d298
+< #include <mach/board.h>
+< #include <mach/gpio.h>
+< #include <linux/oem_board.h>
+3080c3077
+< 		 "%-8s%-16s%04x", cfg->vendor_name ?: MASS_STORAGE_NAME,
+---
+> 		 "%-8s%-16s%04x", cfg->vendor_name ?: "Linux",
+3083,3084c3080,3081
+< 				     ? MASS_STORAGE_PRODUCT
+< 				     : MASS_STORAGE_PRODUCT),
+---
+> 				     ? "File-Stor Gadget"
+> 				     : "File-CD Gadget"),
+3086c3083
+< 	//printk("-------------->%s", common->inquiry_string);
+---
+> 
+3363a3361
+> 
+3382,3383c3380,3381
+< 	cfg->vendor_name = MASS_STORAGE_NAME;
+< 	cfg->product_name = MASS_STORAGE_PRODUCT;
+---
+> 	cfg->vendor_name = 0;
+> 	cfg->product_name = 0;
+3403d3400
+< 	//printk("%s--->%d\n", __FUNCTION__, __LINE__);
+3409,3410c3406
+< //#ifdef CONFIG_USB_ANDROID_MASS_STORAGE
+< #ifndef CONFIG_USB_G_ANDROID
+---
+> #ifdef CONFIG_USB_ANDROID_MASS_STORAGE
+3472,3473c3468,3469
+< 	
+< 	 printk(KERN_INFO "fsg_probe pdev: %p, pdata: %p\n", pdev, pdata);
+---
+> 
+> 	printk(KERN_INFO "fsg_probe pdev: %p, pdata: %p\n", pdev, pdata);
+3498a3495
+> 
+3507c3504
+< 	.driver = { .name = "usb_mass_storage", },
+---
+> 	.driver = { .name = FUNCTION_NAME, },
+3520c3517
+< 	.name = "usb_mass_storage",
+---
+> 	.name = FUNCTION_NAME,
+3533,3534c3530
+< }
+< module_init(init);
+---
+> }module_init(init);
+I file binari ./drivers/usb/gadget//g_android.o e /home/max/Scrivania/ANDROIDR3/drivers/usb/gadget//g_android.o sono diversi
+diff -r ./drivers/usb/gadget//storage_common.c /home/max/Scrivania/ANDROIDR3/drivers/usb/gadget//storage_common.c
+774,775c774
+< //#ifndef CONFIG_USB_ANDROID_MASS_STORAGE
+< #ifndef CONFIG_USB_G_ANDROID
+---
+> #ifndef CONFIG_USB_ANDROID_MASS_STORAGE

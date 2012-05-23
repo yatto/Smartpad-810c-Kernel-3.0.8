@@ -1,0 +1,41 @@
+#
+# gsensor drivers configuration
+#
+
+menuconfig FSC_SENSOR_DEVICE
+bool "freescale  sensors device support"
+default n	
+
+if FSC_SENSOR_DEVICE
+
+config MXC_MMA8451
+tristate "MMA8451 device driver"
+depends on I2C && SYSFS
+default y
+
+config GS_MMA8452
+tristate "MMA8452 device driver"
+depends on I2C && SYSFS
+default n
+
+
+config MXC_MMA_POSITION
+int "MMA845x Accelerate Sensor Position Setting"
+depends on MXC_MMA8451
+default "0"
+
+config SENSORS_MAG3110
+tristate "Freescale MAG3110 e-compass sensor"
+depends on I2C && SYSFS
+
+config SENSORS_MAG_POSITION
+int "MAG3110 Magnetic Sensor Position Setting"
+depends on SENSORS_MAG3110
+default "0"
+
+config MXC_MPL3115
+tristate "MPL3115 pressure device driver"
+depends on I2C
+default n
+
+endif
